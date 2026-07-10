@@ -9,6 +9,22 @@ class RlApp extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      theme: .new(
+        useMaterial3: true,
+        colorScheme: .fromSeed(
+          seedColor: Colors.deepOrangeAccent,
+          dynamicSchemeVariant: .fruitSalad,
+          brightness: .light,
+        ),
+      ),
+      darkTheme: .new(
+        useMaterial3: true,
+        colorScheme: .fromSeed(
+          seedColor: Colors.deepOrangeAccent,
+          dynamicSchemeVariant: .fruitSalad,
+          brightness: .dark,
+        ),
+      ),
       home: Builder(
         builder: (context) {
           return Scaffold(
