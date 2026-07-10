@@ -7,5 +7,6 @@ void main() {
     await tester.pumpWidget(const RlApp());
 
     expect(find.byType(Scaffold), findsOneWidget);
+    expect(find.text('Rapid Learn'), findsOneWidget);
   });
 }
