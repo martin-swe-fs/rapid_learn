@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/l10n/app_localizations.dart';
+import 'package:frontend/rl_app_config.dart';
 
 class RlApp extends StatelessWidget {
   const RlApp({super.key});
@@ -12,7 +13,7 @@ class RlApp extends StatelessWidget {
       theme: .new(
         useMaterial3: true,
         colorScheme: .fromSeed(
-          seedColor: Colors.deepOrangeAccent,
+          seedColor: RlAppConfig.colorSeed,
           dynamicSchemeVariant: .fruitSalad,
           brightness: .light,
         ),
@@ -20,7 +21,7 @@ class RlApp extends StatelessWidget {
       darkTheme: .new(
         useMaterial3: true,
         colorScheme: .fromSeed(
-          seedColor: Colors.deepOrangeAccent,
+          seedColor: RlAppConfig.colorSeed,
           dynamicSchemeVariant: .fruitSalad,
           brightness: .dark,
         ),
