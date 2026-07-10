@@ -1,0 +1,9 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "helpers:pinGitHubActionDigests"],
+  "schedule": ["before 6am on monday"],
+  "packageRules": [
+    { "matchManagers": ["pub"], "groupName": "pub Flutter/Dart dependencies" },
+    { "matchManagers": ["github-actions"], "groupName": "github actions" }
+  ]
+}
