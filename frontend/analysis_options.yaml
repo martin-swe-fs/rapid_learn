@@ -70,6 +70,7 @@ linter:
     use_super_parameters: true
     discarded_futures: true
     prefer_expression_function_bodies: false
+    omit_local_variable_types: false
 
     # Pure ceremony theater (or theatre if you're british).
     public_member_api_docs: false
