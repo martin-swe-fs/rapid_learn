@@ -52,16 +52,19 @@ jobs:
           flutter-version-file: frontend/.fvmrc
           cache: true
       - run: flutter pub get . packages/core
+      - run: dart run build_runner build --delete-conflicting-outputs
+      - run: git diff --exit-code
       - run: dart format --set-exit-if-changed . packages/core
       - run: flutter analyze . packages/core
       - run: flutter test . packages/core
       - run: flutter test --dart-define-from-file=config/public.json . packages/core
       - run: flutter test --platform chrome test/router/rl_path_strategy_test.dart
+      - run: flutter test --platform chrome test/database/rl_database_web_test.dart
       - run: sudo apt-get install -y lcov
       - run: flutter test --coverage . packages/core
       - id: coverage
         run: |
-          lcov --remove coverage/lcov.info '*.g.dart' '*.freezed.dart' '*.drift.dart' '*/l10n/app_localizations*.dart' --ignore-errors unused,empty -o coverage/lcov.info
+          lcov --remove coverage/lcov.info '*.g.dart' '*.freezed.dart' '*.drift.dart' '*/l10n/app_localizations*.dart' '*_native.dart' '*_web.dart' '*_stub.dart' --ignore-errors unused,empty -o coverage/lcov.info
           pct=$(lcov --summary coverage/lcov.info 2>/dev/null | awk '/lines\.+:/ { sub(/%/, "", $2); print $2 }')
           echo "line coverage: $pct%"
           echo "pct=$pct" >> "$GITHUB_OUTPUT"
@@ -109,3 +112,17 @@ jobs:
           git add baseline
           git commit -m "chore(repo): raise coverage baseline to $current%"
           git push origin ci-baseline
+
+  build-web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          flutter-version-file: frontend/.fvmrc
+          cache: true
+      - run: flutter pub get
+      - run: flutter build web
