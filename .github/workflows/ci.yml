@@ -61,7 +61,7 @@ jobs:
       - run: flutter test --coverage . packages/core
       - id: coverage
         run: |
-          lcov --remove coverage/lcov.info '*.g.dart' '*.freezed.dart' '*.drift.dart' '*/l10n/app_localizations*.dart' --ignore-errors unused,empty -o coverage/lcov.info
+          lcov --remove coverage/lcov.info '*.g.dart' '*.freezed.dart' '*.drift.dart' '*/l10n/app_localizations*.dart' '*_native.dart' '*_web.dart' '*_stub.dart' --ignore-errors unused,empty -o coverage/lcov.info
           pct=$(lcov --summary coverage/lcov.info 2>/dev/null | awk '/lines\.+:/ { sub(/%/, "", $2); print $2 }')
           echo "line coverage: $pct%"
           echo "pct=$pct" >> "$GITHUB_OUTPUT"
