@@ -99,6 +99,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Rapid Learn'**
   String get appTitle;
+
+  /// The mobile home page title
+  ///
+  /// In en, this message translates to:
+  /// **'Mobile home page'**
+  String get mobileHomePageTitle;
+
+  /// The desktop home page title
+  ///
+  /// In en, this message translates to:
+  /// **'Desktop home page'**
+  String get desktopHomePageTitle;
 }
 
 class _AppLocalizationsDelegate

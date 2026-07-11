@@ -10,4 +10,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appTitle => 'Rapid Learn';
+
+  @override
+  String get mobileHomePageTitle => 'Mobile home page';
+
+  @override
+  String get desktopHomePageTitle => 'Desktop home page';
 }

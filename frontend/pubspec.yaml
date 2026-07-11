@@ -32,12 +32,15 @@ workspace:
 # versions available, run `flutter pub outdated`.
 dependencies:
   core: ^0.0.1
-
   cupertino_icons: ^1.0.8
+
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+  go_router: ^17.3.0
   intl: ^0.20.2
 
   # The following adds the Cupertino Icons font to your application.
@@ -48,6 +51,7 @@ dev_dependencies:
     sdk: flutter
 
   very_good_analysis: ^10.3.0
+  web: ^1.1.1
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your

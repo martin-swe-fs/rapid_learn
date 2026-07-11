@@ -3,5 +3,13 @@
     "appTitle": "Rapid Learn",
     "@appTitle": {
       "description": "The application title"
+    },
+    "mobileHomePageTitle": "Mobile home page",
+    "@mobileHomePageTitle": {
+        "description": "The mobile home page title"
+    },
+    "desktopHomePageTitle": "Desktop home page",
+    "@desktopHomePageTitle": {
+        "description": "The desktop home page title"
     }
 }

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:frontend/l10n/app_localizations.dart';
 import 'package:frontend/rl_app_config.dart';
+import 'package:frontend/router/rl_router.dart';
 
 class RlApp extends StatelessWidget {
   const RlApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: .new(
@@ -26,15 +27,7 @@ class RlApp extends StatelessWidget {
           brightness: .dark,
         ),
       ),
-      home: Builder(
-        builder: (context) {
-          return Scaffold(
-            appBar: AppBar(
-              title: Text(AppLocalizations.of(context).appTitle),
-            ),
-          );
-        },
-      ),
+      routerConfig: RlRouter.router,
     );
   }
 }

@@ -54,3 +54,4 @@ jobs:
       - run: flutter analyze . packages/core
       - run: flutter test . packages/core
       - run: flutter test --dart-define-from-file=config/public.json . packages/core
+      - run: flutter test --platform chrome test/router/rl_path_strategy_test.dart
