@@ -49,8 +49,8 @@ jobs:
         with:
           flutter-version-file: frontend/.fvmrc
           cache: true
-      - run: flutter pub get
-      - run: dart format --set-exit-if-changed .
-      - run: flutter analyze
-      - run: flutter test
-      - run: flutter test --dart-define-from-file=config/public.json
+      - run: flutter pub get . packages/core
+      - run: dart format --set-exit-if-changed . packages/core
+      - run: flutter analyze . packages/core
+      - run: flutter test . packages/core
+      - run: flutter test --dart-define-from-file=config/public.json . packages/core

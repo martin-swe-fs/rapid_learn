@@ -71,6 +71,7 @@ linter:
     discarded_futures: true
     prefer_expression_function_bodies: false
     omit_local_variable_types: false
+    sort_constructors_first: false
 
     # Pure ceremony theater (or theatre if you're british).
     public_member_api_docs: false
